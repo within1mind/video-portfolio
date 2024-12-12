@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My YouTube Shorts Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">My YouTube Shorts Portfolio</h1>
+            <p class="text-gray-600 max-w-2xl mx-auto">A collection of my latest and most engaging YouTube Shorts</p>
+        </header>
+
+        <div id="videoGrid" class="video-grid">
+            <!-- Placeholder for YouTube Shorts Embeds -->
+            <div class="bg-white shadow-md rounded-lg p-4 text-center">
+                <h3 class="font-semibold mb-2">Placeholder Video 1</h3>
+                <div class="aspect-w-9 aspect-h-16 mb-2">
+                    <iframe 
+                        width="250" 
+                        height="444" 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        title="Placeholder Video"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="text-sm text-gray-600">Add description here</p>
+            </div>
+
+            <div class="bg-white shadow-md rounded-lg p-4 text-center">
+                <h3 class="font-semibold mb-2">Placeholder Video 2</h3>
+                <div class="aspect-w-9 aspect-h-16 mb-2">
+                    <iframe 
+                        width="250" 
+                        height="444" 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        title="Placeholder Video"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="text-sm text-gray-600">Add description here</p>
+            </div>
+        </div>
+
+        <footer class="text-center mt-8 text-gray-500">
+            <p>© 2024 My YouTube Shorts Portfolio</p>
+        </footer>
+    </div>
+
+    <script>
+        // Future script for dynamically loading YouTube Shorts
+        function addVideoToGrid(videoId, title, description) {
+            const grid = document.getElementById('videoGrid');
+            const videoDiv = document.createElement('div');
+            videoDiv.className = 'bg-white shadow-md rounded-lg p-4 text-center';
+            videoDiv.innerHTML = `
+                <h3 class="font-semibold mb-2">${title}</h3>
+                <div class="aspect-w-9 aspect-h-16 mb-2">
+                    <iframe 
+                        width="250" 
+                        height="444" 
+                        src="https://www.youtube.com/embed/${videoId}" 
+                        title="${title}"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="text-sm text-gray-600">${description}</p>
+            `;
+            grid.appendChild(videoDiv);
+        }
+
+        // Example of how to add videos dynamically
+        // addVideoToGrid('videoId', 'Video Title', 'Video Description');
+    </script>
+</body>
+</html>
